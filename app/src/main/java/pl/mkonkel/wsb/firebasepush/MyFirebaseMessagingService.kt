@@ -2,6 +2,14 @@ package pl.mkonkel.wsb.firebasepush
 
 
 // TODO: Implement your custom Messaging service.
+class MyFirebaseMessagingService : MyFirebaseMessagingService(){
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        super.onMessageReceived(remoteMessage)
+        val title = remoteMessage.notification?.title // uzyj jedynie gdu nei jest null!
+        val message = remoteMessage.notification?.body
+        Log.d("MESSAGE", "title: $title / message: $message ")
+    }
+}
 //class MyFirebaseMessagingService : FirebaseMessagingService() {
 
 //    TODO: Create the NotificationManager here
